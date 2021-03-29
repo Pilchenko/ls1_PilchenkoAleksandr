@@ -1,34 +1,28 @@
-//
-//  main.swift
-//  l1_PilchenkoAleksandr
-//
-//  Created by Александр Пильченко on 04.03.2021.
-//
 
 import Foundation
 
-print("Hello, World!")
-
 // 1. Квадратное уравнение
-let a: Double = 34
-let b: Double = 51
-let c: Double = 10
-var x1: Double
-var x2: Double
-var x: Double
-var discriminant: Double
 
-x = a * a - (4 * b * c)
+var a: Float = 1
+var b: Float = 2
+var c: Float = 8
+var x1: Float = 0.0
+var x2:  Float = 0.0
+var d = pow(b, 2) - (4 * a * c)
 
-if (x >= 0) {
-discriminant = sqrt(x)
-    x1 = (-a + discriminant) / (2 * b)
-    x2 = (-a - discriminant) / (2 * b)
-    print(x1, x2)
-} else if (x < 0){
-    x = ((4 * b * c) - pow(a, 2)) / (2 * b)
-    print(x)
+func rootD() {
+    if d == 0 {
+        -(b / (2 * a))
+    } else if d > 0 {
+        x1 = (-b + sqrtf(d)) / (2 * a)
+        x2 = (-b - sqrtf(d)) / (2 * a)
+    } else if d < 0 {
+        print("Решений нет")
+    }
 }
+
+rootD()
+
 // a, b, c - константы так как они объявляються один раз и не меняются в дальнейшем.
 
 //2. Найти площадь, периметр и гипотенузу треугольника.
